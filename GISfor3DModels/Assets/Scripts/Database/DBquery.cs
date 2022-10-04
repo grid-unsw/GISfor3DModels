@@ -10,8 +10,8 @@ public static class DBquery
 {
    public static void LoadPolyhedronTriangles(NpgsqlConnection connection, string tableName, MonoBehaviour handle, Material material, ArcGISMapComponent arcGISMapComponent)
    {
-        var tableFields = "";
-        DbCommonFunctions.CheckIfTableExistOrTruncate(tableName,connection, tableFields);
+       connection.Open();
+        DbCommonFunctions.CheckIfTableExist(tableName,connection);
 
         //// Place this at the beginning of your program to use NetTopologySuite everywhere (recommended)
         //NpgsqlConnection.GlobalTypeMapper.UseNetTopologySuite();
@@ -98,7 +98,8 @@ public static class DBquery
             handle.StartCoroutine(InstantiatePolyhedron(handle.gameObject, material, arcGISMapComponent, polyhedronId, vertices, indices,
                 polyhedronCentroid));
         }
-   }
+        connection.Close();
+    }
 
    private static IEnumerator InstantiatePolyhedron(GameObject parent, Material material, ArcGISMapComponent arcGISMapComponent,
        int polyhedronId, List<Vector3> vertices, List<int> indices, (Point, Point) polyhedronCentroid)

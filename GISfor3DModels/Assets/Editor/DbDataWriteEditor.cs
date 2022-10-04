@@ -1,18 +1,18 @@
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(DbManager))]
-public class DbManagerEditor : Editor
+[CustomEditor(typeof(DbDataWrite))]
+public class DbDataWriteEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
 
-        var dbManager = (DbManager)target;
+        var dbManager = (DbDataWrite)target;
 
         if (GUILayout.Button("Load Polyhedron Data"))
         {
-            dbManager.LoadPolyhedronData();;
+            dbManager.WritePolyhedronData();;
         }
     }
 }

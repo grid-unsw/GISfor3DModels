@@ -1,5 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Esri.ArcGISMapsSDK.Components;
+using Esri.ArcGISMapsSDK.Utils.GeoCoord;
+using Esri.GameEngine.Geometry;
 using UnityEngine;
 using Npgsql;
 using UnityEditor;
@@ -14,6 +15,84 @@ public static class DBexport
         voxelEditor.Close();
 
         return connectionString;
+    }
+
+    public static void ExportMesheseAsPolyhedrons(GameObject[] gameObjects, NpgsqlConnection connection, string tableName, bool truncate = false)
+    {
+        tableName = tableName.ToLower();
+        const string fields = "(id int, geom GEOMETRY(POLYHEDRALSURFACEZ))";
+        connection.Open();
+        DbCommonFunctions.CreateTableIfNotExistOrTruncate(tableName, connection, fields, truncate);
+
+        var initialSqlPart = $"INSERT INTO {tableName} (id, geom) Values(";
+
+
+        using (var conn = connection)
+        {
+            var cmd = new NpgsqlCommand();
+            cmd.Connection = conn;
+
+            var id = 0;
+            foreach (var gameObject in gameObjects)
+            {
+                var meshFilter = gameObject.GetComponent<MeshFilter>();
+                if (meshFilter == null)
+                {
+                    Debug.Log($"{gameObject.name} does not have MeshFilter component attached.");
+                    continue;
+                }
+
+                var location = gameObject.GetComponent<ArcGISLocationComponent>();
+                if (location == null)
+                {
+                    Debug.Log($"{gameObject.name} does not have ArcGISLocation component attached.");
+                    continue;
+                }
+
+                var reprojectedCentroid = GeoUtils.ProjectToSpatialReference(location.Position, new ArcGISSpatialReference(28356));
+                
+                var vertices = GetShiftedVertices(meshFilter.sharedMesh.vertices,reprojectedCentroid, meshFilter);
+                var triangles = meshFilter.sharedMesh.triangles;
+
+                var sql = new System.Text.StringBuilder(initialSqlPart);
+
+                var p = vertices[triangles[0]];
+                var q = vertices[triangles[1]];
+                var r = vertices[triangles[2]];
+
+                sql.Append($"{id},'SRID=7856;POLYHEDRALSURFACE Z((({p.X} {p.Y} {p.Z}, {q.X} {q.Y} {q.Z},{r.X} {r.Y} {r.Z},{p.X} {p.Y} {p.Z}))");
+
+                for (var i = 3; i < meshFilter.sharedMesh.triangles.Length; i += 3)
+                {
+                    p = vertices[triangles[i]];
+                    q = vertices[triangles[i + 1]];
+                    r = vertices[triangles[i + 2]];
+
+                    var polygon = $",(({p.X} {p.Y} {p.Z}, {q.X} {q.Y} {q.Z},{r.X} {r.Y} {r.Z},{p.X} {p.Y} {p.Z}))";
+
+                    sql.Append(polygon);
+                }
+                sql.Append(")')");
+
+                cmd.CommandText = sql.ToString();
+                cmd.ExecuteNonQuery();
+                id++;
+            }
+            Debug.Log("Data export is done.");
+        }
+        connection.Close();
+    }
+
+    private static ArcGISPoint[] GetShiftedVertices(Vector3[] vertices, ArcGISPoint shift, MeshFilter meshFilter)
+    {
+        var shiftedVertices = new ArcGISPoint[vertices.Length];
+        for (var i = 0; i < vertices.Length; i++)
+        {
+            var vertex = meshFilter.transform.TransformPoint(vertices[i]);
+            shiftedVertices[i] =  new ArcGISPoint(vertex.x+shift.X, vertex.z + shift.Y, meshFilter.transform.position.y - vertex.y+shift.Z);
+        }
+
+        return shiftedVertices;
     }
 
     //public static void ExportPolyhedralsSurface(Polyhedron3[] polyhedrons, string tableName, string[] names, bool truncate = false)

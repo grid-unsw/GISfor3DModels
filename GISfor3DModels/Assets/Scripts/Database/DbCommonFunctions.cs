@@ -32,7 +32,7 @@ public static class DbCommonFunctions
         cmd.ExecuteNonQuery();
     }
 
-    private static bool CheckIfTableExist(string tableName, NpgsqlConnection connection)
+    public static bool CheckIfTableExist(string tableName, NpgsqlConnection connection)
     {
         var sql = $"SELECT EXISTS ( SELECT FROM pg_tables WHERE schemaname = 'public' AND tablename = '{tableName}' );";
         var cmd = EstablishConnectionWithQuery(connection, sql);
@@ -46,7 +46,7 @@ public static class DbCommonFunctions
         cmd.ExecuteNonQuery();
     }
 
-    public static void CheckIfTableExistOrTruncate(string tableName, NpgsqlConnection connection, string fields, bool truncate = false)
+    public static void CreateTableIfNotExistOrTruncate(string tableName, NpgsqlConnection connection, string fields, bool truncate = false)
     {
         tableName = tableName.ToLower();
 
@@ -65,7 +65,6 @@ public static class DbCommonFunctions
 
     public static NpgsqlCommand EstablishConnectionWithQuery(NpgsqlConnection connection, string sql)
     {
-        connection.Open();
         var cmd = new NpgsqlCommand();
         cmd.Connection = connection;
         cmd.CommandText = sql;

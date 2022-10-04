@@ -1,7 +1,7 @@
 using Esri.ArcGISMapsSDK.Components;
 using UnityEngine;
 
-public class DbManager : MonoBehaviour
+public class DbDataRead : MonoBehaviour
 {
     public string TableName;
     public Material Material;

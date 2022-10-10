@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Esri.ArcGISMapsSDK.Components;
 using Esri.GameEngine.Geometry;
@@ -9,35 +10,91 @@ using UnityEngine;
 public static class DBquery
 {
    public static void LoadPolyhedronTriangles(NpgsqlConnection connection, string tableName, MonoBehaviour handle, Material material, ArcGISMapComponent arcGISMapComponent)
-   {
-       connection.Open();
-        DbCommonFunctions.CheckIfTableExist(tableName,connection);
+    {
+        connection.Open();
+        DbCommonFunctions.CheckIfTableExist(tableName, connection);
 
-        //// Place this at the beginning of your program to use NetTopologySuite everywhere (recommended)
-        //NpgsqlConnection.GlobalTypeMapper.UseNetTopologySuite();
-
-        // Or to temporarily use NetTopologySuite on a single connection only
         connection.TypeMapper.UseNetTopologySuite();
 
+        var sqlTest = $"SELECT column_name, data_type FROM information_schema.columns WHERE table_name = '{tableName}'";
+        var cmd = new NpgsqlCommand(sqlTest, connection);
+        var columnList = new List<string>();
+        using (var reader = cmd.ExecuteReader())
+        {
+            while (reader.Read())
+            {
+                columnList.Add(reader[0].ToString());
+            }
+        }
+
+        var fieldCount = columnList.Count;
+        var sqlTest1 = $"SELECT * FROM {tableName}";
+        cmd = new NpgsqlCommand(sqlTest1, connection);
+        var metaData = new List<string[]>();
+        using (var reader = cmd.ExecuteReader())
+        {
+            while (reader.Read())
+            {
+                var data = new string[fieldCount];
+                for (var j = 0; j < reader.FieldCount; j++)
+                {
+                    data[j] = $"{columnList[j]}: {reader[j]}";
+                }
+
+                metaData.Add(data);
+            }
+        }
+
+        //update geom field
+        for (var j = 0; j < columnList.Count; j++)
+        {
+            var value = columnList[j];
+            var valueLowerCase = value.ToLower();
+            if (valueLowerCase == "geom" || valueLowerCase == "geometry")
+            {
+                var sqlGeometryType = $"SELECT ST_GeometryType({value}) from {tableName}";
+                var cmd1 = new NpgsqlCommand(sqlGeometryType, connection);
+
+                using (var reader = cmd1.ExecuteReader())
+                {
+                    var k = 0;
+                    while (reader.Read())
+                    {
+                        metaData[k][j] = $"{value}: {reader[0]}";
+                        k++;
+                    }
+                }
+
+                break;
+            }
+        }
+
+        //get object centroids
         var sqlCentroids = $"select st_centroid((ST_Dump (geom)).geom), st_transform(st_setsrid(st_centroid((ST_Dump (geom)).geom),28356),4326) from {tableName}";
 
-        var cmd = new NpgsqlCommand(sqlCentroids, connection);
-        var polyhedronsCentroids = new List<(Point, Point)>();
+        cmd = new NpgsqlCommand(sqlCentroids, connection);
+        var objectsCentroids = new List<(Point, Point)>();
 
         using (var reader = cmd.ExecuteReader())
         {
             while (reader.Read())
             {
-                polyhedronsCentroids.Add(((Point)reader[0], (Point)reader[1]));
+                objectsCentroids.Add(((Point)reader[0], (Point)reader[1]));
             }
         }
 
-        var polyhedronsCount = polyhedronsCentroids.Count;
+        //draw polyhedrons
+        DrawPolyhedron(connection, tableName, handle, material, arcGISMapComponent, metaData, objectsCentroids);
+        
+        connection.Close();
+    }
 
-        var sqlPoints = $"select b.surface[2], (b.geom_pnt).geom from(SELECT(a.p_geom).path as surface, " +
-                  $"ST_DumpPoints(st_tesselate((a.p_geom).geom)) As geom_pnt FROM (select ST_Dump(ST_Extrude(geom, 0, 0, 20)) as p_geom from {tableName}) as a) as b";
+   private static void DrawPolygons(NpgsqlConnection connection, string tableName, MonoBehaviour handle, Material material, ArcGISMapComponent arcGISMapComponent, List<string[]> metaData, List<(Point, Point)> objectsCentroids)
+   {
+        var polyhedronsCount = objectsCentroids.Count;
+        var sqlPoints = $"select a.id, (a.geom_pnt).geom from(SELECT id, ST_DumpPoints(st_tesselate(geom)) As geom_pnt FROM {tableName}) as a";
 
-        cmd = new NpgsqlCommand(sqlPoints, connection);
+        var cmd = new NpgsqlCommand(sqlPoints, connection);
 
         var indices = new List<int>();
         var vertices = new List<Vector3>();
@@ -45,7 +102,7 @@ public static class DBquery
         var i1 = 0;
         var previousSurfaceId = 1;
         var polyhedronId = 0;
-        var polyhedronCentroid = polyhedronsCentroids[polyhedronId];
+        var polyhedronCentroid = objectsCentroids[polyhedronId];
         using (var reader = cmd.ExecuteReader())
         {
             while (reader.Read())
@@ -53,18 +110,80 @@ public static class DBquery
                 switch (i)
                 {
                     case 0:
-                        var surfaceId = (int) reader[0];
-                        if (surfaceId < previousSurfaceId)
+                        var surfaceId = (int)reader[0];
+                        if (surfaceId > previousSurfaceId)
                         {
-                            handle.StartCoroutine(InstantiatePolyhedron(handle.gameObject, material, arcGISMapComponent, polyhedronId, vertices, indices,
-                                polyhedronCentroid));
+                            handle.StartCoroutine(InstantiatePolyhedron(handle.gameObject, material, arcGISMapComponent, polyhedronId, vertices, indices, polyhedronCentroid, metaData[polyhedronId],1));
                             indices = new List<int>();
                             vertices = new List<Vector3>();
                             i1 = 0;
                             polyhedronId++;
                             if (polyhedronsCount != polyhedronId + 1)
                             {
-                                polyhedronCentroid = polyhedronsCentroids[polyhedronId];
+                                polyhedronCentroid = objectsCentroids[polyhedronId];
+                            }
+                        }
+                        previousSurfaceId = surfaceId;
+
+                        indices.Add(i1);
+                        vertices.Add(GetShiftedVector3((Point)reader[1], polyhedronCentroid.Item1));
+                        i++;
+                        i1++;
+                        break;
+                    case 1:
+                        indices.Add(i1);
+                        vertices.Add(GetShiftedVector3((Point)reader[1], polyhedronCentroid.Item1));
+                        i++;
+                        i1++;
+                        break;
+                    case 2:
+                        indices.Add(i1);
+                        vertices.Add(GetShiftedVector3((Point)reader[1], polyhedronCentroid.Item1));
+                        i++;
+                        i1++;
+                        break;
+                    default:
+                        i = 0;
+                        break;
+                }
+            }
+            handle.StartCoroutine(InstantiatePolyhedron(handle.gameObject, material, arcGISMapComponent, polyhedronId, vertices, indices, polyhedronCentroid, metaData[polyhedronId],1));
+        }
+    }
+
+   private static void DrawPolyhedron(NpgsqlConnection connection, string tableName, MonoBehaviour handle, Material material, ArcGISMapComponent arcGISMapComponent, List<string[]> metaData, List<(Point, Point)> objectsCentroids)
+    {
+        var polyhedronsCount = objectsCentroids.Count;
+        var sqlPoints = $"select b.surface[2], (b.geom_pnt).geom from(SELECT(a.p_geom).path as surface, " +
+                            $"ST_DumpPoints(st_tesselate((a.p_geom).geom)) As geom_pnt FROM (select ST_Dump(ST_Extrude(geom, 0, 0, 20)) as p_geom from {tableName}) as a) as b";
+
+        var cmd = new NpgsqlCommand(sqlPoints, connection);
+
+        var indices = new List<int>();
+        var vertices = new List<Vector3>();
+        var i = 0;
+        var i1 = 0;
+        var previousSurfaceId = 1;
+        var polyhedronId = 0;
+        var polyhedronCentroid = objectsCentroids[polyhedronId];
+        using (var reader = cmd.ExecuteReader())
+        {
+            while (reader.Read())
+            {
+                switch (i)
+                {
+                    case 0:
+                        var surfaceId = (int)reader[0];
+                        if (surfaceId < previousSurfaceId)
+                        {
+                            handle.StartCoroutine(InstantiatePolyhedron(handle.gameObject, material, arcGISMapComponent, polyhedronId, vertices, indices, polyhedronCentroid, metaData[polyhedronId]));
+                            indices = new List<int>();
+                            vertices = new List<Vector3>();
+                            i1 = 0;
+                            polyhedronId++;
+                            if (polyhedronsCount != polyhedronId + 1)
+                            {
+                                polyhedronCentroid = objectsCentroids[polyhedronId];
                             }
                             previousSurfaceId = 1;
                         }
@@ -74,19 +193,19 @@ public static class DBquery
                         }
 
                         indices.Add(i1);
-                        vertices.Add(GetShiftedVector3((Point) reader[1], polyhedronCentroid.Item1));
+                        vertices.Add(GetShiftedVector3((Point)reader[1], polyhedronCentroid.Item1));
                         i++;
                         i1++;
                         break;
                     case 1:
                         indices.Add(i1);
-                        vertices.Add(GetShiftedVector3((Point) reader[1], polyhedronCentroid.Item1));
+                        vertices.Add(GetShiftedVector3((Point)reader[1], polyhedronCentroid.Item1));
                         i++;
                         i1++;
                         break;
                     case 2:
                         indices.Add(i1);
-                        vertices.Add(GetShiftedVector3((Point) reader[1], polyhedronCentroid.Item1));
+                        vertices.Add(GetShiftedVector3((Point)reader[1], polyhedronCentroid.Item1));
                         i++;
                         i1++;
                         break;
@@ -95,24 +214,29 @@ public static class DBquery
                         break;
                 }
             }
-            handle.StartCoroutine(InstantiatePolyhedron(handle.gameObject, material, arcGISMapComponent, polyhedronId, vertices, indices,
-                polyhedronCentroid));
+            handle.StartCoroutine(InstantiatePolyhedron(handle.gameObject, material, arcGISMapComponent, polyhedronId, vertices, indices, polyhedronCentroid, metaData[polyhedronId]));
         }
-        connection.Close();
     }
 
-   private static IEnumerator InstantiatePolyhedron(GameObject parent, Material material, ArcGISMapComponent arcGISMapComponent,
-       int polyhedronId, List<Vector3> vertices, List<int> indices, (Point, Point) polyhedronCentroid)
+    private static IEnumerator InstantiatePolyhedron(GameObject parent, Material material, ArcGISMapComponent arcGISMapComponent,
+       int polyhedronId, List<Vector3> vertices, List<int> indices, (Point, Point) polyhedronCentroid, string[] properties, int geomType = 0)
    {
-       var polyhedronGO = new GameObject($"Polyhedron{polyhedronId}", typeof(MeshFilter), typeof(MeshRenderer));
+       var polyhedronGO = new GameObject($"Polyhedron{polyhedronId}", typeof(MeshFilter), typeof(MeshRenderer), typeof(DataPropeties));
        var mesh = new Mesh
        {
            vertices = vertices.ToArray(),
            triangles = indices.ToArray()
        };
+
+       if (geomType == 1)
+       {
+           mesh.normals = GetArrayOfVectorsUp(mesh.vertices.Length);
+       }
+
        mesh.RecalculateNormals();
        polyhedronGO.GetComponent<MeshFilter>().mesh = mesh;
        polyhedronGO.GetComponent<Renderer>().material = material;
+       polyhedronGO.GetComponent<DataPropeties>().Propeties = properties;
        polyhedronGO.transform.parent = parent.transform;
        var location = polyhedronGO.AddComponent<ArcGISLocationComponent>();
        location.Position = new ArcGISPoint(polyhedronCentroid.Item2.X, polyhedronCentroid.Item2.Y, 100, new ArcGISSpatialReference(4326));
@@ -124,8 +248,22 @@ public static class DBquery
 
    private static Vector3 GetShiftedVector3(Point point, Point shift)
    {
-       return new Vector3((float) (point.X-shift.X), (float) (point.Y-shift.Y), (float) point.Z);
+       if (double.IsNaN(point.Z))
+       {
+           return new Vector3((float)(point.X - shift.X), (float)(point.Y - shift.Y), 0);
+       }
+
+       return new Vector3((float)(point.X - shift.X), (float)(point.Y - shift.Y), (float)point.Z);
    }
 
+   private static Vector3[] GetArrayOfVectorsUp(int vectorsCount)
+   {
+       var vectorsUp = new Vector3[vectorsCount];
+       for (var i = 0; i < vectorsCount; i++)
+       {
+           vectorsUp[i] = Vector3.up;
+       }
 
+       return vectorsUp;
+   }
 }

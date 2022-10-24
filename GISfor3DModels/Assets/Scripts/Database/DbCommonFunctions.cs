@@ -1,26 +1,19 @@
 using Npgsql;
 using UnityEditor;
-using UnityEngine.PlayerLoop;
 
 public static class DbCommonFunctions
 {
     public static string GetNpgsqlConnectionString()
     {
-        var voxelEditor = (DBEditor)EditorWindow.GetWindow(typeof(DBEditor));
+        var dbConnection = (DBConnectionData)AssetDatabase.LoadAssetAtPath("Assets/Resources/ConnectionData.asset", typeof(DBConnectionData));
 
-        var connectionString = voxelEditor.GetConnectionString();
-        voxelEditor.Close();
-
-        return connectionString;
+        return dbConnection.GetConnectionString();
     }
 
     public static NpgsqlConnection GetNpgsqlConnection()
     {
-        var voxelEditor = (DBEditor)EditorWindow.GetWindow(typeof(DBEditor));
-
-        var connectionString = voxelEditor.GetConnectionString();
+        var connectionString = GetNpgsqlConnectionString();
         var connection = new NpgsqlConnection(connectionString);
-        voxelEditor.Close();
 
         return connection;
     }
@@ -70,4 +63,6 @@ public static class DbCommonFunctions
         cmd.CommandText = sql;
         return cmd;
     }
+
+
 }

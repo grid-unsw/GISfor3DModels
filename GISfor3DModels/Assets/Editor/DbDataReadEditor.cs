@@ -10,9 +10,9 @@ public class DbDataReadEditor : Editor
 
         var dbManager = (DbDataRead)target;
 
-        if (GUILayout.Button("Load Polyhedron Data"))
+        if (GUILayout.Button("Load Data"))
         {
-            dbManager.LoadPolyhedronData();;
+            dbManager.LoadDataFromDb();;
         }
     }
 }

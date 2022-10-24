@@ -1,0 +1,19 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.0f1 (6eacc8284459) revision 7253192'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19043) 64bit Enterprise' Language: 'en' Physical Memory: 15779 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker208
+-projectPath
+C:/Users/z3525545/Documents/GitHub/GISfor3DModels/GISfor3DModels
+-logFile
+Logs/AssetImportWorker208.log
+-srvPort
+56873
+Successfully changed project path to: C:/Users/z3525545/Documents/GitHub/GISfor3DModels/GISfor3DModels

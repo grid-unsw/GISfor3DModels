@@ -1,0 +1,233 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.0f1 (6eacc8284459) revision 7253192'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19043) 64bit Enterprise' Language: 'en' Physical Memory: 15779 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker307
+-projectPath
+C:/Users/z3525545/Documents/GitHub/GISfor3DModels/GISfor3DModels
+-logFile
+Logs/AssetImportWorker307.log
+-srvPort
+56873
+Successfully changed project path to: C:/Users/z3525545/Documents/GitHub/GISfor3DModels/GISfor3DModels
+C:/Users/z3525545/Documents/GitHub/GISfor3DModels/GISfor3DModels
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+mdb reader table full -> cleaning up stale readers. Current readers:
+    pid     thread     txnid
+     24972 38a4 -
+     24972 4498 -
+      4924 45fc -
+     21784 2c50 -
+     19124 78f8 -
+     25452 2e90 -
+     28068 7bd0 -
+     14804 18b0 13071
+      1168 791c -
+     12160 1abc -
+     31668 75e0 -
+      5244 6858 -
+     26732 64ac 13076
+     31152 5870 -
+     27044 78f0 -
+     28132 793c -
+     31328 2998 -
+     29300 1140 -
+     21996 73dc -
+     30220 6324 13083
+     11284 7b34 -
+     19004 7b58 -
+     26172 1a2c -
+     14996 7ab4 -
+     25132 1788 -
+     29864 6198 -
+     26264 546c -
+      5520 441c -
+     24620 4f4 -
+     15032 2e80 -
+     25664 7aec -
+     21264 64ec -
+     25032 1d20 -
+      2444 3998 -
+       808 6a30 13098
+     26344 7854 -
+     13232 7298 13100
+     24752 1f1c -
+     12228 60f0 -
+      3664 394c -
+     14872 6a44 -
+     17752 3430 -
+     16604 741c 13107
+     16988 6ce4 -
+     25060 1ac0 -
+     30864 41e4 -
+     18684 4dd4 -
+     31836 7c60 -
+     32496 7ef4 -
+     28252 7d2c -
+     10920 6aa8 -
+     15172 5868 -
+     28864 736c 13117
+     28796 7a0c -
+      3224 5e3c -
+     32760 7e18 -
+     18876 4fe0 -
+     32420 7630 -
+     12632 43b8 -
+     32660 3244 -
+     10368 7804 -
+     30520 4c1c 13126
+     27888 7ee0 -
+     33372 8260 -
+     32140 81e4 -
+      4336 7d1c -
+     16668 1118 -
+     33312 8390 -
+     27704 7d80 -
+     33660 4010 13136
+     33468 5044 -
+     30744 1a98 -
+     31068 46b4 13142
+     18676 7c94 13143
+     32848 7fcc -
+     26864 8150 -
+     31876 7e30 -
+     32112 1910 -
+     23660 6f98 -
+     17824 42b0 -
+     33220 7ec8 -
+     33524 8088 -
+     34576 8520 -
+     34416 86e4 -
+     33300 4a58 -
+      5976 83b8 -
+     32780 2e88 -
+      3392 2d50 13161
+     12680 8480 -
+     33200 7dec -
+     24680 82d0 -
+     28484 5974 -
+     32384 4754 -
+     32488 808c -
+     34460 559c 13178
+      2964 36f8 -
+     32260 3a2c -
+     34692 7270 13181
+     19668 7c7c -
+     33332 62dc -
+     32840 7a78 13184
+     34680 498c 13185
+     31848 4d60 13186
+     22280 5cf0 -
+     15156 6f18 -
+     34788 8168 -
+     26340 2d68 -
+     33744 87d4 -
+     31936 8284 -
+      7868 6458 -
+     32352 8650 -
+      4596 2290 -
+     33540 3c48 -
+       388 6678 -
+     27520 7b04 -
+     33536 7dd4 -
+     33024 65e0 13200
+      2032 7bec 13201
+     13992 8528 -
+     21268 2e44 -
+     33572 640 -
+     32596 3124 -
+     34436 6838 -
+     30756 8510 -
+      9788 6c40 -
+     30056 4c94 13065
+Cleaned out 123 stale readers
+Refreshing native plugins compatible for Editor in 832.49 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.0f1 (6eacc8284459)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.0f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/z3525545/Documents/GitHub/GISfor3DModels/GISfor3DModels/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) HD Graphics 620 (ID=0x5916)
+    Vendor:   Intel
+    VRAM:     7889 MB
+    Driver:   27.20.100.8681
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.0f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.0f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56544
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.040388 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 736.86 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  6.612 seconds
+Domain Reload Profiling:
+	ReloadAssembly (6626ms)
+		BeginReloadAssembly (591ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (2ms)
+		EndReloadAssembly (5281ms)
+			LoadAssemblies (580ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1194ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (363ms)
+			SetupLoadedEditorAssemblies (2844ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (64ms)
+				SetLoadedEditorAssemblies (15ms)
+				RefreshPlugins (737ms)
+				BeforeProcessingInitializeOnLoad (6ms)
+				ProcessInitializeOnLoadAttributes (1764ms)
+				ProcessInitializeOnLoadMethodAttributes (257ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.575540 seconds.

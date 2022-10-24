@@ -1,6 +1,4 @@
-﻿using Esri.ArcGISMapsSDK.Components;
-using Esri.ArcGISMapsSDK.Utils.GeoCoord;
-using Esri.GameEngine.Geometry;
+﻿using Esri.GameEngine.Geometry;
 using UnityEngine;
 using Npgsql;
 using UnityEditor;
@@ -17,7 +15,7 @@ public static class DBexport
         return connectionString;
     }
 
-    public static void ExportMesheseAsPolyhedrons(GameObject[] gameObjects, NpgsqlConnection connection, string tableName, bool truncate = false)
+    public static void ExportMeshesAsPolyhedrons(MeshFilter[] meshFilters, NpgsqlConnection connection, ArcGISPoint centroid, string tableName, bool truncate = false)
     {
         tableName = tableName.ToLower();
         const string fields = "(id int, geom GEOMETRY(POLYHEDRALSURFACEZ))";
@@ -26,32 +24,15 @@ public static class DBexport
 
         var initialSqlPart = $"INSERT INTO {tableName} (id, geom) Values(";
 
-
         using (var conn = connection)
         {
             var cmd = new NpgsqlCommand();
             cmd.Connection = conn;
 
             var id = 0;
-            foreach (var gameObject in gameObjects)
+            foreach (var meshFilter in meshFilters)
             {
-                var meshFilter = gameObject.GetComponent<MeshFilter>();
-                if (meshFilter == null)
-                {
-                    Debug.Log($"{gameObject.name} does not have MeshFilter component attached.");
-                    continue;
-                }
-
-                var location = gameObject.GetComponent<ArcGISLocationComponent>();
-                if (location == null)
-                {
-                    Debug.Log($"{gameObject.name} does not have ArcGISLocation component attached.");
-                    continue;
-                }
-
-                var reprojectedCentroid = GeoUtils.ProjectToSpatialReference(location.Position, new ArcGISSpatialReference(28356));
-                
-                var vertices = GetShiftedVertices(meshFilter.sharedMesh.vertices,reprojectedCentroid, meshFilter);
+                var vertices = GetShiftedVertices(meshFilter.sharedMesh.vertices,centroid, meshFilter);
                 var triangles = meshFilter.sharedMesh.triangles;
 
                 var sql = new System.Text.StringBuilder(initialSqlPart);
@@ -89,7 +70,7 @@ public static class DBexport
         for (var i = 0; i < vertices.Length; i++)
         {
             var vertex = meshFilter.transform.TransformPoint(vertices[i]);
-            shiftedVertices[i] =  new ArcGISPoint(vertex.x+shift.X, vertex.z + shift.Y, meshFilter.transform.position.y - vertex.y+shift.Z);
+            shiftedVertices[i] =  new ArcGISPoint(vertex.x+shift.X, vertex.z + shift.Y, vertex.y+shift.Z);
         }
 
         return shiftedVertices;

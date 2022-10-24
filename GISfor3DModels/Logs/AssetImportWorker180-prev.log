@@ -1,0 +1,196 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.0f1 (6eacc8284459) revision 7253192'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19043) 64bit Enterprise' Language: 'en' Physical Memory: 15779 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.0f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker180
+-projectPath
+C:/Users/z3525545/Documents/GitHub/GISfor3DModels/GISfor3DModels
+-logFile
+Logs/AssetImportWorker180.log
+-srvPort
+56873
+Successfully changed project path to: C:/Users/z3525545/Documents/GitHub/GISfor3DModels/GISfor3DModels
+C:/Users/z3525545/Documents/GitHub/GISfor3DModels/GISfor3DModels
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+mdb reader table full -> cleaning up stale readers. Current readers:
+    pid     thread     txnid
+     24972 38a4 -
+     24972 606c -
+     24972 3b0 -
+     24112 2980 -
+     30056 4c94 3817
+      4924 45fc -
+     21784 2c50 -
+     19124 78f8 -
+     25452 2e90 -
+     28068 7bd0 -
+     14804 18b0 3823
+      1168 791c -
+     12160 1abc -
+     31668 75e0 -
+      5244 6858 -
+     26732 64ac 3828
+     31152 5870 -
+     27044 78f0 -
+     28132 793c -
+     31328 2998 -
+     29300 1140 -
+     21996 73dc -
+     30220 6324 3835
+     11284 7b34 -
+     19004 7b58 -
+     26172 1a2c -
+     14996 7ab4 -
+     25132 1788 -
+     29864 6198 -
+     26264 546c -
+      5520 441c -
+     24620 4f4 -
+     15032 2e80 -
+     25664 7aec -
+     21264 64ec -
+     25032 1d20 -
+      2444 3998 -
+       808 6a30 3850
+     26344 7854 3851
+     13232 7298 3852
+     24736 18c8 -
+     29196 5ae8 -
+     24644 2284 -
+     27620 14d4 -
+     30648 43a4 -
+     28444 77c8 -
+      2640 62a8 -
+     15844 994 -
+     27664 63a8 -
+     26856 18a4 -
+     25832 308 -
+     30716 1ff4 -
+     24152 1dd8 -
+       792 1024 -
+     23700 57f8 -
+     23392 4624 3740
+     18036 67f8 -
+     26488 2b2c -
+     27108 4964 -
+     24012 6088 3744
+     17648 6004 3745
+      2564 2644 -
+     18392 f24 -
+     16032 b68 3748
+     30516 26dc -
+     19080 6a84 -
+     11092 2c68 -
+     22844 6dd4 -
+     19476 1390 -
+      7760 6558 -
+     26324 731c -
+     10372 2a80 -
+      3340 5be8 -
+     15168 c8c -
+     19168 94c -
+     26956 31f4 -
+     14728 5348 -
+     23668 4b20 -
+     27264 5e1c -
+      8676 48c4 -
+     26800 7570 -
+     14656 27c8 -
+     25928 cb4 3767
+     17820 6e70 -
+     22016 4750 -
+     17964 6238 -
+     30320 7574 -
+     26168 12c0 -
+     11304 6360 -
+     30496 2a8 -
+      9220 39ec -
+     26676 71c4 -
+     27908 6e08 3777
+     20572 28bc -
+     16320 39ac -
+     22188 6dfc -
+     17928 2318 3781
+      6260 2768 -
+     28096 67cc 3783
+     30472 6d54 -
+     25008 4020 -
+     12412 61b4 -
+     20080 610 -
+     22644 75e4 3788
+      7404 117c -
+     29524 d4c -
+     21680 4dbc -
+     13660 18a0 3792
+     13472 2098 -
+     18796 2d34 3794
+     26892 77b0 -
+     18264 6534 -
+     20204 2820 -
+     16388 6a2c -
+     18496 5960 3801
+     20280 75c0 -
+     12040 db0 -
+     29448 33b8 3806
+     11548 4350 -
+     31440 7ad4 3808
+     13568 3900 3809
+      2424 7318 -
+     30004 36bc -
+     26696 3540 -
+     26516 2f70 -
+     31264 7b1c -
+Cleaned out 122 stale readers
+Refreshing native plugins compatible for Editor in 1682.00 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.0f1 (6eacc8284459)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.0f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/z3525545/Documents/GitHub/GISfor3DModels/GISfor3DModels/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) HD Graphics 620 (ID=0x5916)
+    Vendor:   Intel
+    VRAM:     7889 MB
+    Driver:   27.20.100.8681
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.0f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.0f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56752
+Begin MonoManager ReloadAssembly

@@ -3,6 +3,7 @@ using Esri.ArcGISMapsSDK.Utils.GeoCoord;
 using Esri.GameEngine.Geometry;
 using UnityEngine;
 
+#if UNITY_EDITOR
 public class DbDataWrite : MonoBehaviour
 {
     public string TableName;
@@ -30,3 +31,4 @@ public class DbDataWrite : MonoBehaviour
         DBexport.ExportMeshesAsPolyhedrons(meshFiltersInChildren, connection, centroid, TableName, Truncate);
     }
 }
+#endif

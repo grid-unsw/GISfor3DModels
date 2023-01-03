@@ -1,8 +1,9 @@
 using Npgsql;
 using UnityEditor;
-
+#if UNITY_EDITOR
 public static class DbCommonFunctions
 {
+
     public static string GetNpgsqlConnectionString()
     {
         var dbConnection = (DBConnectionData)AssetDatabase.LoadAssetAtPath("Assets/Resources/ConnectionData.asset", typeof(DBConnectionData));
@@ -66,3 +67,4 @@ public static class DbCommonFunctions
 
 
 }
+#endif

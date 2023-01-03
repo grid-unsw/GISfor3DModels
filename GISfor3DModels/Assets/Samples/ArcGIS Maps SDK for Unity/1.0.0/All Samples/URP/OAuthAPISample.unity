@@ -98,8 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: cc58ea1045e28354aa4e02dc8b8366a8,
-    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: cc58ea1045e28354aa4e02dc8b8366a8, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -206,10 +205,10 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.70731235, y: -0.000000002167586, z: -0.0000000015116878,
-    w: 0.70690113}
-  m_LocalPosition: {x: 0.0032034025, y: 1399992.6, z: 4519.622}
+  m_LocalRotation: {x: 0.7071068, y: 4.9065393e-18, z: 4.9065393e-18, w: 0.7071068}
+  m_LocalPosition: {x: -6.332739e-11, y: 0, z: 1.8189894e-11}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1071212537}
   m_RootOrder: 0
@@ -236,12 +235,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
   m_Dithering: 0
   m_ClearDepth: 1
+  m_AllowXRRendering: 1
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
@@ -252,12 +253,17 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8bbba49acb848c0448694828560b07fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   UpdateClippingPlanes: 1
+  UseCameraViewportProperties: 1
+  verticalFov: 0
+  horizontalFov: 0
+  viewportSizeX: 0
+  viewportSizeY: 0
 --- !u!114 &963194231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,7 +271,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6715ece696adb074bbe6b0103cdafcff, type: 3}
   m_Name: 
@@ -287,8 +293,16 @@ MonoBehaviour:
     x: -618238.9954544718
     y: 4669683.145507156
     z: -6179876.89937004
-  m_LocalRotation: {x: 0.31640252, y: 0.04726705, z: -0.015787158, w: 0.94731516}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation:
+    value:
+      x: 0.3179317
+      y: 0.047241498
+      z: -0.015863458
+      w: 0.94680303
+  m_LocalScale:
+    x: 1
+    y: 1
+    z: 1
 --- !u!114 &963194233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,9 +316,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position:
-    X: -95.7129
-    Y: 37.0902
-    Z: 1400000
+    x: -95.7129
+    y: 37.0902
+    z: 1400000
     SRWkid: 4326
   rotation:
     Heading: 0
@@ -355,24 +369,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c703502c1493f5b4eb3e95b2efe0271e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originPosition:
-    x: -95.7129
-    y: 37.0902
-    z: 1400000
-    SRWkid: 4326
-  mapType: 0
-  apiKey: 
+  apiKey: AAPKafe92773080547edb1fa6d2a854ec57ddeq98J7RYYkMEcpYGTosg5P1C0m384ojTO94Ev2HDyVmsFtGmnCa7R9KPeqePZe8
   basemap: https://ibasemaps-api.arcgis.com/arcgis/rest/services/World_Imagery/MapServer
   basemapType: 1
   basemapAuthentication:
     ConfigurationIndex: -1
   elevation: https://elevation3d.arcgis.com/arcgis/rest/services/WorldElevation3D/Terrain3D/ImageServer
+  enableExtent: 0
+  elevationAuthentication:
+    ConfigurationIndex: -1
+  extent:
+    GeographicCenter:
+      x: 0
+      y: 0
+      z: 0
+      SRWkid: 4326
+    ExtentShape: 0
+    ShapeDimensions:
+      x: 0
+      y: 0
   layers:
   - Name: 
     Type: 0
     Source: Enter Service URL
     Opacity: 1
     IsVisible: 1
+    Authentication:
+      ConfigurationIndex: -1
+  originPosition:
+    x: -95.7129
+    y: 37.0902
+    z: 1400000
+    SRWkid: 4326
+  mapType: 0
+  editorModeEnabled: 1
+  dataFetchWithSceneView: 1
+  rebaseWithSceneView: 0
+  meshCollidersEnabled: 0
+  configurations: []
+  RootChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1071212536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,10 +423,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LocalPosition:
-    x: -507072.29016654735
-    y: 3825382.963804109
-    z: -5068661.723622503
-  m_LocalRotation: {x: -0.44638246, y: 0.044579584, z: 0.022272611, w: 0.8934536}
+    x: -618238.9954544718
+    y: 4669683.145507156
+    z: -6179876.89937004
+  m_LocalRotation:
+    value:
+      x: -0.44467917
+      y: 0.04462194
+      z: 0.022187624
+      w: 0.89430255
 --- !u!4 &1071212537
 Transform:
   m_ObjectHideFlags: 0
@@ -400,6 +442,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 963194228}
   m_Father: {fileID: 0}
@@ -498,6 +541,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &1618859651
@@ -510,6 +554,7 @@ Transform:
   m_LocalRotation: {x: 0.65111995, y: 0.47252992, z: 0.1644227, w: 0.570722}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -526,4 +571,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Version: 1
   m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18309204, g: 0.22876471, b: 0.30665746, a: 1}
+  m_IndirectSpecularColor: {r: 0.4503175, g: 0.50034004, b: 0.5753107, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -268,7 +268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c703502c1493f5b4eb3e95b2efe0271e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  apiKey: 
+  apiKey: AAPKafe92773080547edb1fa6d2a854ec57ddeq98J7RYYkMEcpYGTosg5P1C0m384ojTO94Ev2HDyVmsFtGmnCa7R9KPeqePZe8
   basemap: https://ibasemaps-api.arcgis.com/arcgis/rest/services/World_Imagery/MapServer
   basemapType: 1
   basemapAuthentication:
@@ -507,6 +507,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpdateClippingPlanes: 1
+  UseCameraViewportProperties: 1
+  verticalFov: 0
+  horizontalFov: 0
+  viewportSizeX: 0
+  viewportSizeY: 0
 --- !u!20 &1354401680
 Camera:
   m_ObjectHideFlags: 0

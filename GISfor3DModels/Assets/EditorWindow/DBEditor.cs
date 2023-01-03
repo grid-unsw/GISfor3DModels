@@ -3,6 +3,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
+#if UNITY_EDITOR
 [Serializable]
 public class DBEditor : EditorWindow
 {
@@ -62,3 +63,4 @@ public class DBEditor : EditorWindow
         }
     }
 }
+#endif

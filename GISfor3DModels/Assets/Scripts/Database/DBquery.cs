@@ -6,9 +6,10 @@ using NetTopologySuite.Geometries;
 using Npgsql;
 using UnityEngine;
 
+#if UNITY_EDITOR
 public static class DBquery
 {
-   public static void LoadData(NpgsqlConnection connection, string tableName, MonoBehaviour handle, GameObject prefab, Material material, ArcGISMapComponent arcGISMapComponent, float pointSize = 0.1f)
+   public static void LoadData(NpgsqlConnection connection, string tableName, MonoBehaviour handle, string extrusion, GameObject prefab, Material material, ArcGISMapComponent arcGISMapComponent, float pointSize = 0.1f)
    {
         connection.Open();
         DbCommonFunctions.CheckIfTableExist(tableName, connection);
@@ -25,12 +26,14 @@ public static class DBquery
         else if (geomType == GeometryType.ST_Polygon.ToString() || geomType == GeometryType.ST_MultiPolygon.ToString())
         {
             var centroids = GetCentroids(connection, tableName);
-            DrawPolygons(connection, tableName, handle, material, arcGISMapComponent, metadata.Item1, centroids);
-        }
-        else if (geomType == GeometryType.ST_PolyhedronSurface.ToString())
-        {
-            var centroids = GetCentroids(connection, tableName);
-            DrawPolyhedron(connection, tableName, handle, material, arcGISMapComponent, metadata.Item1, centroids);
+            if (extrusion == "")
+            {
+                DrawPolygons(connection, tableName, handle, material, arcGISMapComponent, metadata.Item1, centroids);
+            }
+            else
+            {
+                DrawPolyhedron(connection, tableName, handle, material, arcGISMapComponent, metadata.Item1, centroids, extrusion);
+            }
         }
         else
         {
@@ -226,11 +229,11 @@ public static class DBquery
         }
     }
 
-   private static void DrawPolyhedron(NpgsqlConnection connection, string tableName, MonoBehaviour handle, Material material, ArcGISMapComponent arcGISMapComponent, List<string[]> metaData, List<(Point, Point)> objectsCentroids)
+   private static void DrawPolyhedron(NpgsqlConnection connection, string tableName, MonoBehaviour handle, Material material, ArcGISMapComponent arcGISMapComponent, List<string[]> metaData, List<(Point, Point)> objectsCentroids, string extrusion)
     {
         var polyhedronsCount = objectsCentroids.Count;
         var sqlPoints = $"select b.surface[2], (b.geom_pnt).geom from(SELECT(a.p_geom).path as surface, " +
-                            $"ST_DumpPoints(st_tesselate((a.p_geom).geom)) As geom_pnt FROM (select ST_Dump(ST_Extrude(geom, 0, 0, 20)) as p_geom from {tableName} ) as a) as b";
+                            $"ST_DumpPoints(st_tesselate((a.p_geom).geom)) As geom_pnt FROM (select ST_Dump(st_extrude(geom,0,0,{extrusion})) as p_geom from {tableName} ) as a) as b";
 
         var cmd = new NpgsqlCommand(sqlPoints, connection);
 
@@ -338,3 +341,4 @@ public static class DBquery
        return vectorsUp;
    }
 }
+#endif

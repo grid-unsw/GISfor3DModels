@@ -3,18 +3,9 @@ using UnityEngine;
 using Npgsql;
 using UnityEditor;
 
+#if UNITY_EDITOR
 public static class DBexport
 {
-    private static string GetConnectionString()
-    {
-        var voxelEditor = (DBEditor)EditorWindow.GetWindow(typeof(DBEditor));
-
-        var connectionString = voxelEditor.GetConnectionString();
-        voxelEditor.Close();
-
-        return connectionString;
-    }
-
     public static void ExportMeshesAsPolyhedrons(MeshFilter[] meshFilters, NpgsqlConnection connection, ArcGISPoint centroid, string tableName, bool truncate = false)
     {
         tableName = tableName.ToLower();
@@ -314,45 +305,45 @@ public static class DBexport
     //    }
     //}
 
-    public static void ExportPolyhedronTriangles(Mesh mesh, string tableName, bool truncate = false)
-    {
-        var connectionString = GetConnectionString();
-        tableName = tableName.ToLower();
+    //public static void ExportPolyhedronTriangles(Mesh mesh, string tableName, bool truncate = false)
+    //{
+    //    var connectionString = GetConnectionString();
+    //    tableName = tableName.ToLower();
 
-        if (!CheckIfTableExist(tableName, connectionString))
-        {
-            CreateTable(tableName, connectionString, "(id int, geom GEOMETRY(TINZ))");
-        }
-        else
-        {
-            if (truncate)
-            {
-                TruncateTable(tableName, connectionString);
-            }
-        }
+    //    if (!CheckIfTableExist(tableName, connectionString))
+    //    {
+    //        CreateTable(tableName, connectionString, "(id int, geom GEOMETRY(TINZ))");
+    //    }
+    //    else
+    //    {
+    //        if (truncate)
+    //        {
+    //            TruncateTable(tableName, connectionString);
+    //        }
+    //    }
 
-        var sql = $"INSERT INTO {tableName} (id, geom) Values(";
+    //    var sql = $"INSERT INTO {tableName} (id, geom) Values(";
 
-        using (var conn = new NpgsqlConnection(connectionString))
-        {
-            conn.Open();
-            var cmd = new NpgsqlCommand();
-            cmd.Connection = conn;
+    //    using (var conn = new NpgsqlConnection(connectionString))
+    //    {
+    //        conn.Open();
+    //        var cmd = new NpgsqlCommand();
+    //        cmd.Connection = conn;
 
-            var index = 0;
+    //        var index = 0;
 
-            for (var i = 0; i < mesh.triangles.Length; i += 3)
-            {
-                var p = mesh.vertices[mesh.triangles[i]];
-                var q = mesh.vertices[mesh.triangles[i + 1]];
-                var r = mesh.vertices[mesh.triangles[i + 2]];
+    //        for (var i = 0; i < mesh.triangles.Length; i += 3)
+    //        {
+    //            var p = mesh.vertices[mesh.triangles[i]];
+    //            var q = mesh.vertices[mesh.triangles[i + 1]];
+    //            var r = mesh.vertices[mesh.triangles[i + 2]];
 
-                cmd.CommandText = $"{sql}{index},'TIN Z((({p.x} {p.y} {p.z}, {q.x} {q.y} {q.z},{r.x} {r.y} {r.z},{p.x} {p.y} {p.z})))')";
-                cmd.ExecuteNonQuery();
-                index++;
-            }
-        }
-    }
+    //            cmd.CommandText = $"{sql}{index},'TIN Z((({p.x} {p.y} {p.z}, {q.x} {q.y} {q.z},{r.x} {r.y} {r.z},{p.x} {p.y} {p.z})))')";
+    //            cmd.ExecuteNonQuery();
+    //            index++;
+    //        }
+    //    }
+    //}
 
     private static void CreateTable(string tableName, string connectionString, string fields)
     {
@@ -378,24 +369,6 @@ public static class DBexport
         cmd.ExecuteNonQuery();
     }
 
-    public static void CheckIfTableExistOrTruncate(string tableName, bool truncate = false)
-    {
-        var connectionString = GetConnectionString();
-        tableName = tableName.ToLower();
-
-        if (!CheckIfTableExist(tableName, connectionString))
-        {
-            CreateTable(tableName, connectionString, "(id text, geom GEOMETRY(POLYHEDRALSURFACEZ))");
-        }
-        else
-        {
-            if (truncate)
-            {
-                TruncateTable(tableName, connectionString);
-            }
-        }
-    }
-
     private static NpgsqlCommand EstablishConnectionWithQuery(NpgsqlConnection connection, string sql)
     {
         connection.Open();
@@ -404,11 +377,5 @@ public static class DBexport
         cmd.CommandText = sql;
         return cmd;
     }
-
-    public static NpgsqlCommand GetNpgsqlCommand()
-    {
-        var connection = new NpgsqlConnection(GetConnectionString());
-        connection.Open();
-        return new NpgsqlCommand("", connection);
-    }
 }
+#endif

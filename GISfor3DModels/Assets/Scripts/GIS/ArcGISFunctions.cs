@@ -13,7 +13,8 @@ public static class ArcGISFunctions
         var raycastHeight = 5000;
         var position = gameObject.transform.position;
         var raycastStart = new Vector3(position.x, position.y + raycastHeight, position.z);
-        if (Physics.Raycast(raycastStart, Vector3.down, out RaycastHit hitInfo))
+        var layerMask = 1 << LayerMask.NameToLayer("gis");
+        if (Physics.Raycast(raycastStart, Vector3.down, out RaycastHit hitInfo, raycastHeight*2,~layerMask))
         {
             var location = gameObject.GetComponent<ArcGISLocationComponent>();
             location.Position = HitToGeoPosition(hitInfo, arcGISMapComponent, elevationOffset);

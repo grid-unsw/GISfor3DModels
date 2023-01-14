@@ -6,7 +6,7 @@ using UnityEditor;
 #if UNITY_EDITOR
 public static class DBexport
 {
-    public static void ExportMeshesAsPolyhedrons(MeshFilter[] meshFilters, NpgsqlConnection connection, ArcGISPoint centroid, string tableName, bool truncate = false)
+    public static void ExportMeshesAsPolyhedrons(MeshFilter[] meshFilters, NpgsqlConnection connection, ArcGISPoint[] centroids, string tableName, bool truncate = false)
     {
         tableName = tableName.ToLower();
         const string fields = "(id int, geom GEOMETRY(POLYHEDRALSURFACEZ))";
@@ -20,10 +20,11 @@ public static class DBexport
             var cmd = new NpgsqlCommand();
             cmd.Connection = conn;
 
-            var id = 0;
-            foreach (var meshFilter in meshFilters)
+            for (var index = 0; index < meshFilters.Length; index++)
             {
-                var vertices = GetShiftedVertices(meshFilter.sharedMesh.vertices,centroid, meshFilter);
+                var meshFilter = meshFilters[index];
+                var centroid = centroids[index];
+                var vertices = GetShiftedVertices(meshFilter.sharedMesh.vertices, centroid, meshFilter);
                 var triangles = meshFilter.sharedMesh.triangles;
 
                 var sql = new System.Text.StringBuilder(initialSqlPart);
@@ -32,7 +33,8 @@ public static class DBexport
                 var q = vertices[triangles[1]];
                 var r = vertices[triangles[2]];
 
-                sql.Append($"{id},'SRID=7856;POLYHEDRALSURFACE Z((({p.X} {p.Y} {p.Z}, {q.X} {q.Y} {q.Z},{r.X} {r.Y} {r.Z},{p.X} {p.Y} {p.Z}))");
+                sql.Append(
+                    $"{index},'SRID=7856;POLYHEDRALSURFACE Z((({p.X} {p.Y} {p.Z}, {q.X} {q.Y} {q.Z},{r.X} {r.Y} {r.Z},{p.X} {p.Y} {p.Z}))");
 
                 for (var i = 3; i < meshFilter.sharedMesh.triangles.Length; i += 3)
                 {
@@ -44,12 +46,13 @@ public static class DBexport
 
                     sql.Append(polygon);
                 }
+
                 sql.Append(")')");
 
                 cmd.CommandText = sql.ToString();
                 cmd.ExecuteNonQuery();
-                id++;
             }
+
             Debug.Log("Data export is done.");
         }
         connection.Close();

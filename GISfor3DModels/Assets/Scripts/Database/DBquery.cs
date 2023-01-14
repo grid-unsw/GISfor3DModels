@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Esri.ArcGISMapsSDK.Components;
+using Esri.ArcGISMapsSDK.Utils.GeoCoord;
 using Esri.GameEngine.Geometry;
 using NetTopologySuite.Geometries;
 using Npgsql;
@@ -9,7 +10,7 @@ using UnityEngine;
 #if UNITY_EDITOR
 public static class DBquery
 {
-   public static void LoadData(NpgsqlConnection connection, string tableName, MonoBehaviour handle, string extrusion, GameObject prefab, Material material, ArcGISMapComponent arcGISMapComponent, float pointSize = 0.1f)
+   public static void LoadPolygonData(NpgsqlConnection connection, string tableName, MonoBehaviour handle, string extrusion, Material material, ArcGISMapComponent arcGISMapComponent)
    {
         connection.Open();
         DbCommonFunctions.CheckIfTableExist(tableName, connection);
@@ -19,11 +20,7 @@ public static class DBquery
         var metadata = LoadMetadata(connection, tableName);
 
         var geomType = metadata.Item2[0];
-        if (geomType == GeometryType.ST_Point.ToString())
-        {
-            DrawPoints(connection, tableName, handle, prefab, metadata.Item1, material, arcGISMapComponent, pointSize);
-        }
-        else if (geomType == GeometryType.ST_Polygon.ToString() || geomType == GeometryType.ST_MultiPolygon.ToString())
+        if (geomType == GeometryType.ST_Polygon.ToString() || geomType == GeometryType.ST_MultiPolygon.ToString())
         {
             var centroids = GetCentroids(connection, tableName);
             if (extrusion == "")
@@ -43,7 +40,29 @@ public static class DBquery
         connection.Close();
     }
 
-   private static (List<string[]>, string[]) LoadMetadata(NpgsqlConnection connection, string tableName)
+   public static void LoadPointData(NpgsqlConnection connection, string tableName, MonoBehaviour handle, Material material, ArcGISMapComponent arcGISMapComponent, GameObject prefab, float scaleSize)
+   {
+       connection.Open();
+       DbCommonFunctions.CheckIfTableExist(tableName, connection);
+
+       connection.TypeMapper.UseNetTopologySuite();
+
+       var metadata = LoadMetadata(connection, tableName);
+
+       var geomType = metadata.Item2[0];
+       if (geomType == GeometryType.ST_Point.ToString())
+       {
+           DrawPoints(connection, tableName, handle, prefab, metadata.Item1, material, arcGISMapComponent, scaleSize);
+       }
+       else
+       {
+           Debug.Log("Not supported geometry.");
+       }
+
+       connection.Close();
+   }
+
+    private static (List<string[]>, string[]) LoadMetadata(NpgsqlConnection connection, string tableName)
    {
        var sqlTest = $"SELECT column_name, data_type FROM information_schema.columns WHERE table_name = '{tableName}'";
        var cmd = new NpgsqlCommand(sqlTest, connection);
@@ -151,21 +170,27 @@ public static class DBquery
        else
        {
            pointGO = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-           pointGO.transform.localScale = new Vector3(pointSize, pointSize, pointSize);
            pointGO.GetComponent<Renderer>().material = material;
            Object.DestroyImmediate(pointGO.GetComponent<SphereCollider>());
        }
 
+       pointGO.transform.localScale = new Vector3(pointSize, pointSize, pointSize);
+
        pointGO.name = metadata[0];
        pointGO.transform.parent = parent.transform;
-
-        var location = pointGO.AddComponent<ArcGISLocationComponent>();
+       pointGO.layer = 6;//gis layer
+       var location = pointGO.AddComponent<ArcGISLocationComponent>();
        location.Position = new ArcGISPoint(point.X, point.Y, 100, new ArcGISSpatialReference(4326));
        pointGO.AddComponent<DataPropeties>().Propeties = metadata;
+       if (prefab != null)
+       {
+           location.Rotation = new ArcGISRotation(90, 90, 0);
+       }
        yield return null;
        yield return null;
        ArcGISFunctions.SetElevation(pointGO, arcGISMapComponent, verticalOffset);
-    }
+       pointGO.AddComponent<MeshCollider>();
+   }
 
    private static void DrawPolygons(NpgsqlConnection connection, string tableName, MonoBehaviour handle, Material material, ArcGISMapComponent arcGISMapComponent, List<string[]> metaData, List<(Point, Point)> objectsCentroids)
    {
@@ -229,7 +254,8 @@ public static class DBquery
         }
     }
 
-   private static void DrawPolyhedron(NpgsqlConnection connection, string tableName, MonoBehaviour handle, Material material, ArcGISMapComponent arcGISMapComponent, List<string[]> metaData, List<(Point, Point)> objectsCentroids, string extrusion)
+   private static void DrawPolyhedron(NpgsqlConnection connection, string tableName, MonoBehaviour handle, Material material, ArcGISMapComponent arcGISMapComponent, List<string[]> metaData, 
+       List<(Point, Point)> objectsCentroids, string extrusion)
     {
         var polyhedronsCount = objectsCentroids.Count;
         var sqlPoints = $"select b.surface[2], (b.geom_pnt).geom from(SELECT(a.p_geom).path as surface, " +
@@ -254,7 +280,8 @@ public static class DBquery
                         var surfaceId = (int)reader[0];
                         if (surfaceId < previousSurfaceId)
                         {
-                            handle.StartCoroutine(InstantiateMesh(handle.gameObject, material, arcGISMapComponent, $"Polyhedron {polyhedronId}", vertices, indices, polyhedronCentroid, metaData[polyhedronId]));
+                            handle.StartCoroutine(InstantiateMesh(handle.gameObject, material, arcGISMapComponent, $"Polyhedron {polyhedronId}", vertices, indices, polyhedronCentroid, 
+                                metaData[polyhedronId]));
                             indices = new List<int>();
                             vertices = new List<Vector3>();
                             i1 = 0;
@@ -312,12 +339,14 @@ public static class DBquery
        gameObject.GetComponent<Renderer>().material = material;
        gameObject.GetComponent<DataPropeties>().Propeties = properties;
        gameObject.transform.parent = parent.transform;
+       gameObject.layer = 6;//gis layer
        var location = gameObject.AddComponent<ArcGISLocationComponent>();
        location.Position = new ArcGISPoint(polyhedronCentroid.Item2.X, polyhedronCentroid.Item2.Y, 100, new ArcGISSpatialReference(4326));
        // need a frame for location component updates to occur
        yield return null;
        yield return null;
-       ArcGISFunctions.SetElevation(gameObject, arcGISMapComponent, 20);
+       ArcGISFunctions.SetElevation(gameObject, arcGISMapComponent, 5);
+       gameObject.AddComponent<MeshCollider>();
    }
 
    private static Vector3 GetShiftedVector3(Point point, Point shift)

@@ -58,10 +58,10 @@ public class Information : MonoBehaviour
             var properties = data.Propeties;
 
             var metadata = _templateObj.GetComponent<RectTransform>();
-            var height = _templateHeight * properties.Length / 10 + 13;
+            var height = _templateHeight * properties.Length / 10 + 20;
             Background.sizeDelta = new Vector2(250, height);
             metadata.sizeDelta = Background.sizeDelta;
-            metadata.anchoredPosition3D = new Vector3(metadata.anchoredPosition3D.x, -height / 2, 0);
+            metadata.anchoredPosition3D = new Vector3(metadata.anchoredPosition3D.x, -height / 2 - 3, 0);
 
             foreach (var templateGameObject in _templateRows)
             {

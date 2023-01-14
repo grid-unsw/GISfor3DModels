@@ -1,14 +1,14 @@
 using UnityEditor;
 using UnityEngine;
 
-[CustomEditor(typeof(DbDataRead))]
-public class DbDataReadEditor : Editor
+[CustomEditor(typeof(DbDataReadPoint))]
+public class DbPointDataReadEditor : Editor
 {
     public override void OnInspectorGUI()
     {
         DrawDefaultInspector();
 
-        var dbManager = (DbDataRead)target;
+        var dbManager = (DbDataReadPoint)target;
 
         if (GUILayout.Button("Load Data"))
         {

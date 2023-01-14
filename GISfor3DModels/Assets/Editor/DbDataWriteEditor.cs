@@ -10,7 +10,7 @@ public class DbDataWriteEditor : Editor
 
         var dbManager = (DbDataWrite)target;
 
-        if (GUILayout.Button("Load Polyhedron Data"))
+        if (GUILayout.Button("Write Polyhedron Data"))
         {
             dbManager.WritePolyhedronData();;
         }

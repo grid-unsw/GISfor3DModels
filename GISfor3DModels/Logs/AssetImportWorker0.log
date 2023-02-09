@@ -1,0 +1,1119 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.16f1 (4016570cf34f) revision 4200023'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Enterprise' Language: 'en' Physical Memory: 15779 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.16f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/z3525545/Documents/GitHub/GISfor3DModels/GISfor3DModels
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+50544
+Successfully changed project path to: C:/Users/z3525545/Documents/GitHub/GISfor3DModels/GISfor3DModels
+C:/Users/z3525545/Documents/GitHub/GISfor3DModels/GISfor3DModels
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [25072] Host "[IP] 192.168.1.105 [Port] 0 [Flags] 2 [Guid] 931208066 [EditorId] 931208066 [Version] 1048832 [Id] WindowsEditor(7,L-5CG8121V88) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [25072] Host "[IP] 192.168.1.105 [Port] 0 [Flags] 2 [Guid] 931208066 [EditorId] 931208066 [Version] 1048832 [Id] WindowsEditor(7,L-5CG8121V88) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+Refreshing native plugins compatible for Editor in 440.72 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.16f1 (4016570cf34f)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/z3525545/Documents/GitHub/GISfor3DModels/GISfor3DModels/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: Intel(R) HD Graphics 620 (ID=0x5916)
+    Vendor:   Intel
+    VRAM:     7889 MB
+    Driver:   31.0.101.2111
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56892
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.038273 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 454.59 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.748 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3749ms)
+		BeginReloadAssembly (363ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (3ms)
+		EndReloadAssembly (2889ms)
+			LoadAssemblies (355ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (582ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (150ms)
+			SetupLoadedEditorAssemblies (1769ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (38ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (455ms)
+				BeforeProcessingInitializeOnLoad (7ms)
+				ProcessInitializeOnLoadAttributes (1053ms)
+				ProcessInitializeOnLoadMethodAttributes (216ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.044716 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 387.62 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  6.993 seconds
+Domain Reload Profiling:
+	ReloadAssembly (6996ms)
+		BeginReloadAssembly (576ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (28ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (2ms)
+			CreateAndSetChildDomain (72ms)
+		EndReloadAssembly (5933ms)
+			LoadAssemblies (579ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1331ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (276ms)
+			SetupLoadedEditorAssemblies (3629ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (21ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (388ms)
+				BeforeProcessingInitializeOnLoad (463ms)
+				ProcessInitializeOnLoadAttributes (2011ms)
+				ProcessInitializeOnLoadMethodAttributes (698ms)
+				AfterProcessingInitializeOnLoad (48ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (62ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.20 seconds
+Refreshing native plugins compatible for Editor in 2.03 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5499 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 63 unused Assets / (0.9 MB). Loaded Objects now: 5926.
+Memory consumption went from 215.7 MB to 214.9 MB.
+Total: 12.331300 ms (FindLiveObjects: 0.679200 ms CreateObjectMapping: 0.617700 ms MarkObjects: 10.392000 ms  DeleteObjects: 0.641000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 493230.623109 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat
+  artifactKey: Guid(79459efec17a4d00a321bdcc27bbc385) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Outline.mat using Guid(79459efec17a4d00a321bdcc27bbc385) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '628d684be1b33898a5bcbbbee5936448') in 0.835918 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Material/SelectionMat.mat
+  artifactKey: Guid(0f58739bf9c19ef4491bf50ee556ae0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Material/SelectionMat.mat using Guid(0f58739bf9c19ef4491bf50ee556ae0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '953048b5227b3a6cc6ec272585c684e2') in 0.033317 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Samples/ArcGIS Maps SDK for Unity/1.0.0/All Samples/Resources/Materials/HDRP/ConstructionYearRenderer.mat
+  artifactKey: Guid(f5ed141d33d0c224686f5ccbb69e491e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/ArcGIS Maps SDK for Unity/1.0.0/All Samples/Resources/Materials/HDRP/ConstructionYearRenderer.mat using Guid(f5ed141d33d0c224686f5ccbb69e491e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '405668c9ad2cae7ed4cf0e44c79e7b21') in 2.468552 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Material/Red.mat
+  artifactKey: Guid(ff683c0d02e3dc341821764d334b9583) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Material/Red.mat using Guid(ff683c0d02e3dc341821764d334b9583) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b72df7854a93155c1bb633cecbe03576') in 0.021266 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Material/BlueTransparent.mat
+  artifactKey: Guid(9d548d965ca66f646a3475cd8dc07509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Material/BlueTransparent.mat using Guid(9d548d965ca66f646a3475cd8dc07509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbeb7fd80e17e790706fdf43f3b14104') in 3.703122 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Samples/ArcGIS Maps SDK for Unity/1.0.0/All Samples/Resources/Materials/URP/BuildingNameRenderer.mat
+  artifactKey: Guid(c681fbe997906da41a44f9bf1f6da680) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/ArcGIS Maps SDK for Unity/1.0.0/All Samples/Resources/Materials/URP/BuildingNameRenderer.mat using Guid(c681fbe997906da41a44f9bf1f6da680) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd58fd664276e4a64a554e0a57f5bd4fc') in 5.809989 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Samples/ArcGIS Maps SDK for Unity/1.0.0/All Samples/Resources/Materials/URP/ConstructionYearRenderer.mat
+  artifactKey: Guid(cdb0b1d0bd1637343886523c161fca4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/ArcGIS Maps SDK for Unity/1.0.0/All Samples/Resources/Materials/URP/ConstructionYearRenderer.mat using Guid(cdb0b1d0bd1637343886523c161fca4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b15af6ba30230b5c442620034861715f') in 5.250205 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Samples/ArcGIS Maps SDK for Unity/1.0.0/All Samples/Resources/Materials/HDRP/BuildingNameRenderer.mat
+  artifactKey: Guid(79fed903605ddae4882df17ba81be596) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Samples/ArcGIS Maps SDK for Unity/1.0.0/All Samples/Resources/Materials/HDRP/BuildingNameRenderer.mat using Guid(79fed903605ddae4882df17ba81be596) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c23a6f2aa989480b733340011a0fd70') in 4.431836 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000072 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+  artifactKey: Guid(2e498d1c8094910479dc3e1b768306a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset using Guid(2e498d1c8094910479dc3e1b768306a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ae92165972ae4a9a04b50dad418601b') in 0.162519 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Material/RedTransparent.mat
+  artifactKey: Guid(652084660a0bfed45906edf6ddd375aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Material/RedTransparent.mat using Guid(652084660a0bfed45906edf6ddd375aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2448c6889bc90bd54cfba57c5d541e22') in 0.033555 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+  artifactKey: Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Fonts/LiberationSans.ttf using Guid(e3265ab4bf004d28a9537516768c1c75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b83773be494963c7fe5c59fe699a858d') in 0.113053 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000096 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat
+  artifactKey: Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Drop Shadow.mat using Guid(e73a58f6e2794ae7b1b7e50b7fb811b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7c12c27e97e9d67558fe7d01853d5a2') in 0.255834 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Material
+  artifactKey: Guid(68948f8e178fa124588568de9c93ea67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Material using Guid(68948f8e178fa124588568de9c93ea67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c010e6151d94fbf74f5c21ff46c6f688') in 0.010142 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000067 seconds.
+  path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
+  artifactKey: Guid(8f586378b4e144a9851e7b34d9b748ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset using Guid(8f586378b4e144a9851e7b34d9b748ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a12ed068675beb00b58e81d7646a601') in 0.132490 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Darth_Artisan/Free_Trees/Meshes/Materials/No Name.mat
+  artifactKey: Guid(98189d553b7404d8290e447fb600ac6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Darth_Artisan/Free_Trees/Meshes/Materials/No Name.mat using Guid(98189d553b7404d8290e447fb600ac6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6d0636c67717f8fd9465cc1ae84b748b') in 3.451723 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Darth_Artisan/Free_Trees/Meshes/Materials/Free_Tree.mat
+  artifactKey: Guid(af65c0942482e46aeb256506726ff0f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Darth_Artisan/Free_Trees/Meshes/Materials/Free_Tree.mat using Guid(af65c0942482e46aeb256506726ff0f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '76a64c873b0036275588a9de06fbfa5e') in 0.052501 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.035209 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.40 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.919 seconds
+Domain Reload Profiling:
+	ReloadAssembly (4921ms)
+		BeginReloadAssembly (357ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (16ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (113ms)
+		EndReloadAssembly (4216ms)
+			LoadAssemblies (384ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1508ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (118ms)
+			SetupLoadedEditorAssemblies (1796ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (39ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (282ms)
+				ProcessInitializeOnLoadAttributes (1004ms)
+				ProcessInitializeOnLoadMethodAttributes (426ms)
+				AfterProcessingInitializeOnLoad (41ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (92ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 20.37 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5395 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 55 unused Assets / (0.8 MB). Loaded Objects now: 6025.
+Memory consumption went from 216.0 MB to 215.2 MB.
+Total: 12.886600 ms (FindLiveObjects: 1.335200 ms CreateObjectMapping: 1.248700 ms MarkObjects: 9.660800 ms  DeleteObjects: 0.640300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 810.037196 seconds.
+  path: Assets/3DModels/230201.obj
+  artifactKey: Guid(537e430de5946ad4aa5098c13a43535a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3DModels/230201.obj using Guid(537e430de5946ad4aa5098c13a43535a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7fe6170d711d49bed431b8a56d4982be') in 3.994902 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 41.010184 seconds.
+  path: Assets/3DModels/230201
+  artifactKey: Guid(de5666f872697ae4fa4cbb476a464557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3DModels/230201 using Guid(de5666f872697ae4fa4cbb476a464557) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '712da37418eacd8877b094893ddf9007') in 0.010234 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.367477 seconds.
+  path: Assets/3DModels/230201/Image1_.jpg
+  artifactKey: Guid(1fa54539af4fbfc4dbb7320963853697) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3DModels/230201/Image1_.jpg using Guid(1fa54539af4fbfc4dbb7320963853697) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '889668e24ef2602da34dc545c851b5d3') in 0.068655 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14108.878958 seconds.
+  path: Assets/Scripts
+  artifactKey: Guid(9811b1ef9d00aff45ae97d140225e56c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts using Guid(9811b1ef9d00aff45ae97d140225e56c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a487d6cd71135ec60798c8787863ba13') in 0.022092 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.666220 seconds.
+  path: Assets/Scripts/GIS
+  artifactKey: Guid(61f47afae81e76742926516df5c59697) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GIS using Guid(61f47afae81e76742926516df5c59697) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ba20309f5d09346678866c51ae4eabc') in 0.029639 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 1.928520 seconds.
+  path: Assets/Scripts/GIS/DbDataReadPolygon.cs
+  artifactKey: Guid(5bdd87e7111fe244aadc55742cc6b2f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GIS/DbDataReadPolygon.cs using Guid(5bdd87e7111fe244aadc55742cc6b2f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2eba1a657f73c6d99dd8cae83af31446') in 0.107393 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.860774 seconds.
+  path: Assets/Scripts/GIS/DbDataReadPolygon1.cs
+  artifactKey: Guid(64760082834ebda4f9cc7811bf1fe3f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GIS/DbDataReadPolygon1.cs using Guid(64760082834ebda4f9cc7811bf1fe3f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06e7091e52ea3e6f7e07f7e998e71a23') in 0.046079 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.922557 seconds.
+  path: Assets/Scripts/GIS/DbDataReadPolyhedron.cs
+  artifactKey: Guid(64760082834ebda4f9cc7811bf1fe3f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GIS/DbDataReadPolyhedron.cs using Guid(64760082834ebda4f9cc7811bf1fe3f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2cf8e3a503e807636c2b9e176538b8cd') in 0.027997 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 41.874310 seconds.
+  path: Assets/Scripts/GIS/DbDataReadPolyhedron.cs
+  artifactKey: Guid(64760082834ebda4f9cc7811bf1fe3f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GIS/DbDataReadPolyhedron.cs using Guid(64760082834ebda4f9cc7811bf1fe3f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dde0f135f809ae15a034b5a5c96c9782') in 0.004989 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.041667 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.27 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.173 seconds
+Domain Reload Profiling:
+	ReloadAssembly (5177ms)
+		BeginReloadAssembly (1208ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (60ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (1ms)
+			CreateAndSetChildDomain (663ms)
+		EndReloadAssembly (3581ms)
+			LoadAssemblies (447ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1144ms)
+			ReleaseScriptCaches (4ms)
+			RebuildScriptCaches (171ms)
+			SetupLoadedEditorAssemblies (1570ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (59ms)
+				SetLoadedEditorAssemblies (5ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (306ms)
+				ProcessInitializeOnLoadAttributes (898ms)
+				ProcessInitializeOnLoadMethodAttributes (270ms)
+				AfterProcessingInitializeOnLoad (29ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (58ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 15.59 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5392 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 55 unused Assets / (0.8 MB). Loaded Objects now: 6075.
+Memory consumption went from 216.0 MB to 215.1 MB.
+Total: 8.809700 ms (FindLiveObjects: 0.921500 ms CreateObjectMapping: 0.967200 ms MarkObjects: 6.186000 ms  DeleteObjects: 0.732600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 35.395026 seconds.
+  path: Assets/Scripts/GIS/DbDataReadPoint.cs
+  artifactKey: Guid(3b3dcfc2b39de6f498cfc26a16dce0c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GIS/DbDataReadPoint.cs using Guid(3b3dcfc2b39de6f498cfc26a16dce0c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e5f4c75c597daa95420898deaa9820f') in 0.028228 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.029976 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.29 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.606 seconds
+Domain Reload Profiling:
+	ReloadAssembly (5609ms)
+		BeginReloadAssembly (1069ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (406ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (210ms)
+		EndReloadAssembly (4026ms)
+			LoadAssemblies (662ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (2107ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (98ms)
+			SetupLoadedEditorAssemblies (920ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (23ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (192ms)
+				ProcessInitializeOnLoadAttributes (518ms)
+				ProcessInitializeOnLoadMethodAttributes (170ms)
+				AfterProcessingInitializeOnLoad (14ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (30ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 6.13 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5393 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 55 unused Assets / (0.8 MB). Loaded Objects now: 6082.
+Memory consumption went from 216.0 MB to 215.2 MB.
+Total: 5.139600 ms (FindLiveObjects: 0.456500 ms CreateObjectMapping: 0.404300 ms MarkObjects: 3.886200 ms  DeleteObjects: 0.391500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 153.973434 seconds.
+  path: Assets/Scripts/GIS/TriangleObject.cs
+  artifactKey: Guid(973e3e3d1ba536945ad21ededec7c16c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GIS/TriangleObject.cs using Guid(973e3e3d1ba536945ad21ededec7c16c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e4ce7036e7680e1949fb5bd4782ecf3') in 0.017321 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 54.697172 seconds.
+  path: Assets/Scripts/GIS/TriangleObject.cs
+  artifactKey: Guid(973e3e3d1ba536945ad21ededec7c16c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GIS/TriangleObject.cs using Guid(973e3e3d1ba536945ad21ededec7c16c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13e26b893fdb44541207da5c6331e1f3') in 0.014219 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 12.450727 seconds.
+  path: Assets/Scripts/GIS/TriangleObject.cs
+  artifactKey: Guid(973e3e3d1ba536945ad21ededec7c16c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GIS/TriangleObject.cs using Guid(973e3e3d1ba536945ad21ededec7c16c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcb8f4423dadc3182522a183a94c9246') in 0.004086 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 209.058954 seconds.
+  path: Assets/Scripts/GIS/TriangleObject.cs
+  artifactKey: Guid(973e3e3d1ba536945ad21ededec7c16c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GIS/TriangleObject.cs using Guid(973e3e3d1ba536945ad21ededec7c16c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3a20250c65c7d4834169b9bbf51cb54') in 0.005895 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.350843 seconds.
+  path: Assets/Scripts/GIS/TriangleObject.cs
+  artifactKey: Guid(973e3e3d1ba536945ad21ededec7c16c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GIS/TriangleObject.cs using Guid(973e3e3d1ba536945ad21ededec7c16c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e70fb8d1f74cef52a9319447e3f6f4d1') in 0.006596 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 90.640846 seconds.
+  path: Assets/Scripts/GIS/PostgisTriangleObject.cs
+  artifactKey: Guid(973e3e3d1ba536945ad21ededec7c16c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GIS/PostgisTriangleObject.cs using Guid(973e3e3d1ba536945ad21ededec7c16c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c078f83e85ec82cad0f541a79f0de130') in 0.006304 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.775887 seconds.
+  path: Assets/Scripts/GIS/PostgisTriangleObject.cs
+  artifactKey: Guid(973e3e3d1ba536945ad21ededec7c16c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GIS/PostgisTriangleObject.cs using Guid(973e3e3d1ba536945ad21ededec7c16c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3ac27c0ee0fdc9a3689db3b75a0a94e0') in 0.006523 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 197.486110 seconds.
+  path: Assets/Scripts/GIS/DbDataReadPolyhedron.cs
+  artifactKey: Guid(64760082834ebda4f9cc7811bf1fe3f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/GIS/DbDataReadPolyhedron.cs using Guid(64760082834ebda4f9cc7811bf1fe3f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ea465de67a47ae8a1029f44eeebb13e6') in 0.004922 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.039225 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.66 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.194 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2196ms)
+		BeginReloadAssembly (292ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (23ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (74ms)
+		EndReloadAssembly (1701ms)
+			LoadAssemblies (216ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (560ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (83ms)
+			SetupLoadedEditorAssemblies (701ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (19ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (147ms)
+				ProcessInitializeOnLoadAttributes (392ms)
+				ProcessInitializeOnLoadMethodAttributes (129ms)
+				AfterProcessingInitializeOnLoad (12ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (27ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 6.07 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5393 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 56 unused Assets / (0.8 MB). Loaded Objects now: 6089.
+Memory consumption went from 216.0 MB to 215.2 MB.
+Total: 5.513800 ms (FindLiveObjects: 0.450100 ms CreateObjectMapping: 0.456900 ms MarkObjects: 3.854600 ms  DeleteObjects: 0.751000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.032130 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.08 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.586 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3589ms)
+		BeginReloadAssembly (374ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (18ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (122ms)
+		EndReloadAssembly (2999ms)
+			LoadAssemblies (234ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (770ms)
+			ReleaseScriptCaches (5ms)
+			RebuildScriptCaches (175ms)
+			SetupLoadedEditorAssemblies (1450ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (39ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (273ms)
+				ProcessInitializeOnLoadAttributes (837ms)
+				ProcessInitializeOnLoadMethodAttributes (271ms)
+				AfterProcessingInitializeOnLoad (25ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (64ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 42.89 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5393 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 55 unused Assets / (0.8 MB). Loaded Objects now: 6096.
+Memory consumption went from 216.0 MB to 215.2 MB.
+Total: 18.688700 ms (FindLiveObjects: 4.583900 ms CreateObjectMapping: 0.753600 ms MarkObjects: 12.795900 ms  DeleteObjects: 0.551800 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.052742 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.66 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.980 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3982ms)
+		BeginReloadAssembly (473ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (28ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (137ms)
+		EndReloadAssembly (3176ms)
+			LoadAssemblies (361ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (930ms)
+			ReleaseScriptCaches (4ms)
+			RebuildScriptCaches (146ms)
+			SetupLoadedEditorAssemblies (1500ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (37ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (288ms)
+				ProcessInitializeOnLoadAttributes (875ms)
+				ProcessInitializeOnLoadMethodAttributes (270ms)
+				AfterProcessingInitializeOnLoad (26ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (54ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 15.33 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5393 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 55 unused Assets / (0.8 MB). Loaded Objects now: 6103.
+Memory consumption went from 216.1 MB to 215.2 MB.
+Total: 14.521300 ms (FindLiveObjects: 5.394900 ms CreateObjectMapping: 1.147400 ms MarkObjects: 7.142800 ms  DeleteObjects: 0.833500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.044397 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.21 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.137 seconds
+Domain Reload Profiling:
+	ReloadAssembly (5139ms)
+		BeginReloadAssembly (1398ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (34ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (341ms)
+		EndReloadAssembly (3302ms)
+			LoadAssemblies (935ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (988ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (184ms)
+			SetupLoadedEditorAssemblies (1376ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (35ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (277ms)
+				ProcessInitializeOnLoadAttributes (878ms)
+				ProcessInitializeOnLoadMethodAttributes (161ms)
+				AfterProcessingInitializeOnLoad (20ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (33ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 6.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5393 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 55 unused Assets / (0.8 MB). Loaded Objects now: 6110.
+Memory consumption went from 216.1 MB to 215.2 MB.
+Total: 5.233300 ms (FindLiveObjects: 0.494400 ms CreateObjectMapping: 0.434400 ms MarkObjects: 3.840400 ms  DeleteObjects: 0.462900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.034536 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 3.10 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.254 seconds
+Domain Reload Profiling:
+	ReloadAssembly (4255ms)
+		BeginReloadAssembly (540ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (28ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (115ms)
+		EndReloadAssembly (3243ms)
+			LoadAssemblies (460ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1105ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (178ms)
+			SetupLoadedEditorAssemblies (1329ms)
+				LogAssemblyErrors (1ms)
+				InitializePlatformSupportModulesInManaged (64ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (329ms)
+				ProcessInitializeOnLoadAttributes (754ms)
+				ProcessInitializeOnLoadMethodAttributes (163ms)
+				AfterProcessingInitializeOnLoad (14ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (34ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 13.37 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5393 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 55 unused Assets / (0.8 MB). Loaded Objects now: 6117.
+Memory consumption went from 216.1 MB to 215.3 MB.
+Total: 8.680700 ms (FindLiveObjects: 0.959700 ms CreateObjectMapping: 0.787400 ms MarkObjects: 6.451300 ms  DeleteObjects: 0.479300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.044048 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.26 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.671 seconds
+Domain Reload Profiling:
+	ReloadAssembly (5675ms)
+		BeginReloadAssembly (778ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (43ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (308ms)
+		EndReloadAssembly (4499ms)
+			LoadAssemblies (446ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1220ms)
+			ReleaseScriptCaches (4ms)
+			RebuildScriptCaches (170ms)
+			SetupLoadedEditorAssemblies (2040ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (38ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (311ms)
+				ProcessInitializeOnLoadAttributes (1114ms)
+				ProcessInitializeOnLoadMethodAttributes (527ms)
+				AfterProcessingInitializeOnLoad (45ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (74ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 15.24 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5393 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 55 unused Assets / (0.8 MB). Loaded Objects now: 6124.
+Memory consumption went from 216.1 MB to 215.3 MB.
+Total: 31.020700 ms (FindLiveObjects: 1.952800 ms CreateObjectMapping: 1.318000 ms MarkObjects: 24.502800 ms  DeleteObjects: 3.244700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.035338 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.07 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  7.361 seconds
+Domain Reload Profiling:
+	ReloadAssembly (7364ms)
+		BeginReloadAssembly (685ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (26ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (266ms)
+		EndReloadAssembly (6308ms)
+			LoadAssemblies (471ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1131ms)
+			ReleaseScriptCaches (6ms)
+			RebuildScriptCaches (245ms)
+			SetupLoadedEditorAssemblies (4072ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (70ms)
+				SetLoadedEditorAssemblies (2ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (855ms)
+				ProcessInitializeOnLoadAttributes (2488ms)
+				ProcessInitializeOnLoadMethodAttributes (630ms)
+				AfterProcessingInitializeOnLoad (23ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (51ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 12.23 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5393 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 55 unused Assets / (0.8 MB). Loaded Objects now: 6131.
+Memory consumption went from 216.1 MB to 215.3 MB.
+Total: 9.544600 ms (FindLiveObjects: 0.794800 ms CreateObjectMapping: 0.701600 ms MarkObjects: 6.839900 ms  DeleteObjects: 1.206200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 80922.335532 seconds.
+  path: Assets/Scripts/Database/GeometryType.cs
+  artifactKey: Guid(138aa2991c3ca2842b3155cbd6d6bef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Database/GeometryType.cs using Guid(138aa2991c3ca2842b3155cbd6d6bef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d7c1f4df9c0a610e068fd8138a568b6') in 0.023116 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 22.204601 seconds.
+  path: Assets/Scripts/Database/GeometryType.cs
+  artifactKey: Guid(138aa2991c3ca2842b3155cbd6d6bef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Database/GeometryType.cs using Guid(138aa2991c3ca2842b3155cbd6d6bef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2645b99c21025fb4e647b73b9de2db9b') in 0.006081 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.603782 seconds.
+  path: Assets/Scripts/Database/PostgisGeometryType.cs
+  artifactKey: Guid(138aa2991c3ca2842b3155cbd6d6bef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Database/PostgisGeometryType.cs using Guid(138aa2991c3ca2842b3155cbd6d6bef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1032fe764b45a99a6d105f5d2d67d8f1') in 0.008503 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.062424 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 7.40 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in 24.708 seconds
+Domain Reload Profiling:
+	ReloadAssembly (24720ms)
+		BeginReloadAssembly (4072ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (200ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (826ms)
+		EndReloadAssembly (17632ms)
+			LoadAssemblies (3421ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (9596ms)
+			ReleaseScriptCaches (5ms)
+			RebuildScriptCaches (773ms)
+			SetupLoadedEditorAssemblies (4608ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (73ms)
+				SetLoadedEditorAssemblies (73ms)
+				RefreshPlugins (8ms)
+				BeforeProcessingInitializeOnLoad (1100ms)
+				ProcessInitializeOnLoadAttributes (2385ms)
+				ProcessInitializeOnLoadMethodAttributes (930ms)
+				AfterProcessingInitializeOnLoad (38ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (77ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 10.36 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5393 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 55 unused Assets / (0.8 MB). Loaded Objects now: 6138.
+Memory consumption went from 216.1 MB to 215.3 MB.
+Total: 10.937100 ms (FindLiveObjects: 1.352600 ms CreateObjectMapping: 0.770900 ms MarkObjects: 8.012100 ms  DeleteObjects: 0.800000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.048411 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.12 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  5.270 seconds
+Domain Reload Profiling:
+	ReloadAssembly (5272ms)
+		BeginReloadAssembly (700ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (27ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (142ms)
+		EndReloadAssembly (4141ms)
+			LoadAssemblies (580ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (2255ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (187ms)
+			SetupLoadedEditorAssemblies (1107ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (32ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (242ms)
+				ProcessInitializeOnLoadAttributes (623ms)
+				ProcessInitializeOnLoadMethodAttributes (186ms)
+				AfterProcessingInitializeOnLoad (21ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (34ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 16.01 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5393 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 55 unused Assets / (0.8 MB). Loaded Objects now: 6145.
+Memory consumption went from 216.1 MB to 215.3 MB.
+Total: 13.122000 ms (FindLiveObjects: 0.536000 ms CreateObjectMapping: 0.529600 ms MarkObjects: 11.218700 ms  DeleteObjects: 0.836000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.029580 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\z3525545\Documents\GitHub\GISfor3DModels\GISfor3DModels\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  4.392 seconds
+Domain Reload Profiling:
+	ReloadAssembly (4395ms)
+		BeginReloadAssembly (499ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (20ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (137ms)
+		EndReloadAssembly (3440ms)
+			LoadAssemblies (465ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (1185ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (104ms)
+			SetupLoadedEditorAssemblies (1431ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (36ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (255ms)
+				ProcessInitializeOnLoadAttributes (853ms)
+				ProcessInitializeOnLoadMethodAttributes (257ms)
+				AfterProcessingInitializeOnLoad (25ms)
+				EditorAssembliesLoaded (1ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (71ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 8.44 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 5393 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 55 unused Assets / (0.8 MB). Loaded Objects now: 6152.
+Memory consumption went from 216.2 MB to 215.3 MB.
+Total: 9.721000 ms (FindLiveObjects: 0.588800 ms CreateObjectMapping: 0.543400 ms MarkObjects: 5.967000 ms  DeleteObjects: 2.620100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 611.515045 seconds.
+  path: Assets/3DModels/230201.obj
+  artifactKey: Guid(537e430de5946ad4aa5098c13a43535a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3DModels/230201.obj using Guid(537e430de5946ad4aa5098c13a43535a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63f43d54dd22e8741107934b6ad1d5bf') in 1.794078 seconds 

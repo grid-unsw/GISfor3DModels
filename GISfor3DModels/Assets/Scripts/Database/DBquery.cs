@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Esri.ArcGISMapsSDK.Components;
 using Esri.ArcGISMapsSDK.Utils.GeoCoord;
 using Esri.GameEngine.Geometry;
+using NetTopologySuite.Algorithm;
 using NetTopologySuite.Geometries;
 using Npgsql;
 using UnityEngine;
@@ -10,7 +11,8 @@ using UnityEngine;
 #if UNITY_EDITOR
 public static class DBquery
 {
-   public static void LoadPolygonData(NpgsqlConnection connection, string tableName, MonoBehaviour handle, string extrusion, Material material, ArcGISMapComponent arcGISMapComponent)
+   public static void LoadTriangleData(NpgsqlConnection connection, string tableName, MonoBehaviour handle, string extrusion, Material material, 
+       ArcGISMapComponent arcGISMapComponent)
    {
         connection.Open();
         DbCommonFunctions.CheckIfTableExist(tableName, connection);
@@ -20,7 +22,8 @@ public static class DBquery
         var metadata = LoadMetadata(connection, tableName);
 
         var geomType = metadata.Item2[0];
-        if (geomType == GeometryType.ST_Polygon.ToString() || geomType == GeometryType.ST_MultiPolygon.ToString())
+        if (geomType == PostgisGeometryType.ST_Polygon.ToString() 
+            || geomType == PostgisGeometryType.ST_MultiPolygon.ToString()            )
         {
             var centroids = GetCentroids(connection, tableName);
             if (extrusion == "")
@@ -29,8 +32,13 @@ public static class DBquery
             }
             else
             {
-                DrawPolyhedron(connection, tableName, handle, material, arcGISMapComponent, metadata.Item1, centroids, extrusion);
+                DrawExtrudedPolygon(connection, tableName, handle, material, arcGISMapComponent, metadata.Item1, centroids, extrusion);
             }
+        }
+        else if(geomType == PostgisGeometryType.ST_PolyhedralSurface.ToString())
+        {
+            var centroids = GetCentroids(connection, tableName);
+            DrawPolyhedron(connection, tableName, handle, material, arcGISMapComponent, metadata.Item1, centroids);
         }
         else
         {
@@ -50,7 +58,7 @@ public static class DBquery
        var metadata = LoadMetadata(connection, tableName);
 
        var geomType = metadata.Item2[0];
-       if (geomType == GeometryType.ST_Point.ToString())
+       if (geomType == PostgisGeometryType.ST_Point.ToString())
        {
            DrawPoints(connection, tableName, handle, prefab, metadata.Item1, material, arcGISMapComponent, scaleSize);
        }
@@ -76,8 +84,9 @@ public static class DBquery
        }
 
        var fieldCount = columnList.Count;
-       var sqlTest1 = $"SELECT * FROM {tableName}";
+       var sqlTest1 = $"SELECT * FROM \"{tableName}\"";
        cmd = new NpgsqlCommand(sqlTest1, connection);
+       cmd.AllResultTypesAreUnknown = true;
        var metadata = new List<string[]>();
        using (var reader = cmd.ExecuteReader())
        {
@@ -101,7 +110,7 @@ public static class DBquery
            var valueLowerCase = value.ToLower();
            if (valueLowerCase == "geom" || valueLowerCase == "geometry")
            {
-               var sqlGeometryType = $"SELECT ST_GeometryType({value}) from {tableName}";
+               var sqlGeometryType = $"SELECT ST_GeometryType(st_geometryN({value},1)) from \"{tableName}\"";
                var cmd1 = new NpgsqlCommand(sqlGeometryType, connection);
 
                using (var reader = cmd1.ExecuteReader())
@@ -125,7 +134,7 @@ public static class DBquery
 
    private static List<(Point, Point)> GetCentroids(NpgsqlConnection connection, string tableName)
    {
-       var sqlCentroids = $"select st_centroid(geom), st_transform(st_setsrid(st_centroid((ST_Dump (geom)).geom),28356),4326) from {tableName}";
+       var sqlCentroids = $"select st_centroid(ST_Points(geom)), st_transform(st_setsrid(st_centroid(ST_Points(geom)),28356),4326) from \"{tableName}\"";
 
        var cmd = new NpgsqlCommand(sqlCentroids, connection);
        var objectsCentroids = new List<(Point, Point)>();
@@ -143,7 +152,7 @@ public static class DBquery
 
    private static void DrawPoints(NpgsqlConnection connection, string tableName, MonoBehaviour handle, GameObject prefab, List<string[]> metadata, Material material, ArcGISMapComponent arcGISMapComponent, float pointSize)
    {
-       var sqlCentroids = $"select geom from {tableName}";
+       var sqlCentroids = $"select geom from \"{tableName}\"";
 
        var cmd = new NpgsqlCommand(sqlCentroids, connection);
        var i = 0;
@@ -195,7 +204,7 @@ public static class DBquery
    private static void DrawPolygons(NpgsqlConnection connection, string tableName, MonoBehaviour handle, Material material, ArcGISMapComponent arcGISMapComponent, List<string[]> metaData, List<(Point, Point)> objectsCentroids)
    {
         var polyhedronsCount = objectsCentroids.Count;
-        var sqlPoints = $"select a.id, (a.geom_pnt).geom from(SELECT id, ST_DumpPoints(st_tesselate(ST_ForcePolygonCW(geom))) As geom_pnt FROM {tableName}) as a";
+        var sqlPoints = $"select a.id, (a.geom_pnt).geom from(SELECT id, ST_DumpPoints(st_tesselate(ST_ForcePolygonCW(geom))) As geom_pnt FROM \"{tableName}\") as a";
 
         var cmd = new NpgsqlCommand(sqlPoints, connection);
 
@@ -254,13 +263,28 @@ public static class DBquery
         }
     }
 
-   private static void DrawPolyhedron(NpgsqlConnection connection, string tableName, MonoBehaviour handle, Material material, ArcGISMapComponent arcGISMapComponent, List<string[]> metaData, 
+   private static void DrawExtrudedPolygon(NpgsqlConnection connection, string tableName, MonoBehaviour handle, Material material, ArcGISMapComponent arcGISMapComponent, List<string[]> metaData, 
        List<(Point, Point)> objectsCentroids, string extrusion)
     {
         var polyhedronsCount = objectsCentroids.Count;
         var sqlPoints = $"select b.surface[2], (b.geom_pnt).geom from(SELECT(a.p_geom).path as surface, " +
-                            $"ST_DumpPoints(st_tesselate((a.p_geom).geom)) As geom_pnt FROM (select ST_Dump(st_extrude(geom,0,0,{extrusion})) as p_geom from {tableName} ) as a) as b";
+                            $"ST_DumpPoints(st_tesselate((a.p_geom).geom)) As geom_pnt FROM (select ST_Dump(st_extrude(geom,0,0,{extrusion})) as p_geom from \"{tableName}\") as a) as b";
 
+        ConstractMeshFromPolyhedronPolygons(connection, handle, material, arcGISMapComponent, metaData, objectsCentroids, polyhedronsCount, sqlPoints);
+    }
+
+    private static void DrawPolyhedron(NpgsqlConnection connection, string tableName, MonoBehaviour handle, Material material, ArcGISMapComponent arcGISMapComponent, List<string[]> metaData,
+    List<(Point, Point)> objectsCentroids)
+    {
+        var polyhedronsCount = objectsCentroids.Count;
+        var sqlPoints = $"select b.surface[2], (b.geom_pnt).geom from(SELECT(a.p_geom).path as surface, " +
+                            $"ST_DumpPoints(st_tesselate((a.p_geom).geom)) As geom_pnt FROM (select ST_Dump(geom) as p_geom from \"{tableName}\") as a) as b";
+
+        ConstractMeshFromPolyhedronPolygons(connection, handle, material, arcGISMapComponent, metaData, objectsCentroids, polyhedronsCount, sqlPoints);
+    }
+
+    private static void ConstractMeshFromPolyhedronPolygons(NpgsqlConnection connection, MonoBehaviour handle, Material material, ArcGISMapComponent arcGISMapComponent, List<string[]> metaData, List<(Point, Point)> objectsCentroids, int polyhedronsCount, string sqlPoints)
+    {
         var cmd = new NpgsqlCommand(sqlPoints, connection);
 
         var indices = new List<int>();
@@ -280,7 +304,7 @@ public static class DBquery
                         var surfaceId = (int)reader[0];
                         if (surfaceId < previousSurfaceId)
                         {
-                            handle.StartCoroutine(InstantiateMesh(handle.gameObject, material, arcGISMapComponent, $"Polyhedron {polyhedronId}", vertices, indices, polyhedronCentroid, 
+                            handle.StartCoroutine(InstantiateMesh(handle.gameObject, material, arcGISMapComponent, $"Polyhedron {polyhedronId}", vertices, indices, polyhedronCentroid,
                                 metaData[polyhedronId]));
                             indices = new List<int>();
                             vertices = new List<Vector3>();
@@ -319,7 +343,7 @@ public static class DBquery
                         break;
                 }
             }
-            
+
             handle.StartCoroutine(InstantiateMesh(handle.gameObject, material, arcGISMapComponent, $"Polyhedron {polyhedronId}", vertices, indices, polyhedronCentroid, metaData[polyhedronId]));
         }
     }

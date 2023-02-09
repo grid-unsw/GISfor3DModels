@@ -13,7 +13,7 @@ public class DbDataReadPolygon : MonoBehaviour
     {
         arcGISMapComponent = FindObjectOfType<ArcGISMapComponent>();
         var connection = DbCommonFunctions.GetNpgsqlConnection();
-        DBquery.LoadPolygonData(connection, TableName, this, Extrusion, Material, arcGISMapComponent);
+        DBquery.LoadTriangleData(connection, TableName, this, Extrusion, Material, arcGISMapComponent);
     }
 }
 #endif

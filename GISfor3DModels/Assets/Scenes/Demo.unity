@@ -230,14 +230,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203844586}
-  m_LocalRotation: {x: -0.7767616, y: 0.084663495, z: 0.020694714, w: -0.623735}
+  m_LocalRotation: {x: -0.7766155, y: 0.08069701, z: 0.025631811, w: -0.624259}
   m_LocalPosition: {x: 0, y: 1.022, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 74.902, y: 211.932, z: -142.838}
+  m_LocalEulerAnglesHint: {x: 74.902, y: 212.66, z: -142.838}
 --- !u!1 &301258986
 GameObject:
   m_ObjectHideFlags: 0
@@ -269,6 +269,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1508498076}
+  - {fileID: 1373160723}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -331,15 +332,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_LocalPosition:
-    x: -4644718.813347764
-    y: -3539903.64224976
-    z: 2550153.2181294844
+    x: -4645187.040675028
+    y: -3538859.064020903
+    z: 2550461.370652826
   m_LocalRotation:
     value:
-      x: -0.44950464
-      y: 0.40453598
-      z: 0.75959736
-      w: 0.23939104
+      x: -0.44947925
+      y: 0.40460745
+      z: 0.7595617
+      w: 0.23943102
 --- !u!1 &854643604 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4613312426491239679, guid: dd9f75ca8afb4cd4f9de3cc604c8c145, type: 3}
@@ -728,6 +729,53 @@ PrefabInstance:
     - {fileID: 4613312426106247657, guid: dd9f75ca8afb4cd4f9de3cc604c8c145, type: 3}
     - {fileID: -417499723545548621, guid: dd9f75ca8afb4cd4f9de3cc604c8c145, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dd9f75ca8afb4cd4f9de3cc604c8c145, type: 3}
+--- !u!1 &1373160722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1373160723}
+  - component: {fileID: 1373160724}
+  m_Layer: 0
+  m_Name: unsw
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1373160723
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373160722}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 301258987}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1373160724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373160722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bdd87e7111fe244aadc55742cc6b2f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TableName: UNSW Campus
+  Material: {fileID: 2100000, guid: ff683c0d02e3dc341821764d334b9583, type: 2}
+  Extrusion: 
 --- !u!1 &1508498075
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,8 +807,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508498075}
-  m_LocalRotation: {x: 0.30263695, y: 0.048003785, z: -0.015223714, w: 0.95177454}
-  m_LocalPosition: {x: -39.89502, y: -458.13028, z: 174.76317}
+  m_LocalRotation: {x: 0.30254883, y: 0.048003558, z: -0.015232186, w: 0.95180243}
+  m_LocalPosition: {x: 4.8689785, y: -338.9863, z: -1003.7724}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
   m_Children: []
